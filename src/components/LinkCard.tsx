@@ -1,4 +1,6 @@
-export const LinkCard = () => {
+import { FC } from 'react';
+
+export const LinkCard: FC = () => {
   return (
     <div className='p-3 flex justify-start items-center flex-row bg-white border border-gray-200 gap-3 rounded-lg cursor-pointer'>
       <div className='w-7 h-7 rounded-full bg-gray-300 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer'>
@@ -18,9 +20,8 @@ export const LinkCard = () => {
         </svg>
       </div>
       <p className='flex-1 font-medium text-sm truncate'>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident sunt
-        perferendis aspernatur tempora repellendus perspiciatis enim,
-        consequuntur explicabo similique asperiores?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+        deleniti?
       </p>
     </div>
   );

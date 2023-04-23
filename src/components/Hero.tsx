@@ -3,7 +3,7 @@ export const Hero = () => {
     <section className='flex flex-col items-center justify-center'>
       <h1 className='text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl text-center'>
         Summarize Articles with <br className='max-md:hidden' />
-        <span className='bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent'>
+        <span className='bg-gradient-to-r from-blue-500 via-indigo-600 to-sky-500 bg-clip-text text-transparent'>
           OpenAI GPT-4
         </span>
       </h1>

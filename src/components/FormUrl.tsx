@@ -13,7 +13,7 @@ export const FormUrl = () => {
     url: '',
     summary: '',
   });
-  const [getSummary] = useLazyGetSummaryQuery();
+  const [getSummary, { isFetching }] = useLazyGetSummaryQuery();
 
   const HandleSubmitArticle = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -55,23 +55,27 @@ export const FormUrl = () => {
                 setArticles({ ...articles, url: event.target.value })
               }
               id='default-search'
-              className='block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none bg-gray-50 focus:ring-gray-500 focus:border-gray-500'
+              className='block w-full overflow-x-scroll p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none bg-gray-50 focus:ring-gray-500 focus:border-gray-500'
               placeholder='Paste the article link...'
             />
             <button
               type='submit'
-              className='text-white absolute right-2.5 bottom-2.5 bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800'
+              disabled={isFetching}
+              className='text-white absolute right-2.5 bottom-2.5 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:hover:bg-gray-400 bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2  '
             >
               Search
             </button>
           </div>
         </form>
+
         <div className='flex flex-col gap-1 max-h-60 overflow-y-auto'>
           <LinkCard />
         </div>
-        <div className='my-10 max-w-full flex justify-center items-center'>
-          <Summary />
-        </div>
+        {articles.summary && (
+          <div className='my-10 max-w-full flex justify-center items-center'>
+            <Summary summary={articles.summary} />
+          </div>
+        )}
       </div>
     </section>
   );
