@@ -1,10 +1,36 @@
+import { FormEvent, useState } from 'react';
+
+import { useLazyGetSummaryQuery } from '../redux/articleService';
 import { LinkCard, Summary } from '.';
 
-export const Input = () => {
+type TArticleState = {
+  url: string;
+  summary: string;
+};
+
+export const FormUrl = () => {
+  const [articles, setArticles] = useState<TArticleState>({
+    url: '',
+    summary: '',
+  });
+  const [getSummary] = useLazyGetSummaryQuery();
+
+  const HandleSubmitArticle = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const { data } = await getSummary({ articleUrl: articles.url });
+    if (data?.summary) {
+      const newArticle = { ...articles, summary: data.summary };
+      setArticles(newArticle);
+    }
+  };
+
+  console.log(articles.summary);
+
   return (
     <section className='mt-20  w-full flex items-center justify-center'>
       <div className='flex flex-col w-full max-w-xl'>
-        <form className='mb-5'>
+        <form onSubmit={HandleSubmitArticle} className='mb-5'>
           <div className='relative'>
             <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
               <svg
@@ -24,6 +50,10 @@ export const Input = () => {
             </div>
             <input
               type='search'
+              value={articles.url}
+              onChange={(event) =>
+                setArticles({ ...articles, url: event.target.value })
+              }
               id='default-search'
               className='block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none bg-gray-50 focus:ring-gray-500 focus:border-gray-500'
               placeholder='Paste the article link...'

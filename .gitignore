@@ -15,6 +15,7 @@ dist-ssr
 clear
 # Environment
 .env
+.env.development
 
 # Editor directories and files
 .vscode/*

@@ -7,10 +7,10 @@ type TSummaryResponse = {
 export const articleServiceApi = createApi({
   reducerPath: 'articleApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_RAPID_API_URL,
+    baseUrl: import.meta.env.VITE_RAPIDAPI_BASE_URL,
     prepareHeaders: (headers) => {
-      headers.set('X-RapidAPI-Key', import.meta.env.VITE_RAPID_API_KEY);
-      headers.set('X-RapidAPI-Host', import.meta.env.VITE_RAPID_HOST);
+      headers.set('X-RapidAPI-Key', import.meta.env.VITE_RAPIDAPI_KEY);
+      headers.set('X-RapidAPI-Host', import.meta.env.VITE_RAPIDAPI_HOST);
       return headers;
     },
   }),

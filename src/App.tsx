@@ -1,4 +1,4 @@
-import { Header, Hero, Input } from './components';
+import { Header, Hero, FormUrl } from './components';
 
 export default function App() {
   return (
@@ -9,7 +9,7 @@ export default function App() {
       </main>
       <div className='layout '>
         <Hero />
-        <Input />
+        <FormUrl />
       </div>
     </>
   );
