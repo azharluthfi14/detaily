@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-
 import { articleServiceApi } from './articleService';
 
 export const store = configureStore({

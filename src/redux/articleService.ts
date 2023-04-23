@@ -11,7 +11,6 @@ export const articleServiceApi = createApi({
     prepareHeaders: (headers) => {
       headers.set('X-RapidAPI-Key', import.meta.env.VITE_RAPID_API_KEY);
       headers.set('X-RapidAPI-Host', import.meta.env.VITE_RAPID_HOST);
-
       return headers;
     },
   }),
