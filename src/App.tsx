@@ -7,7 +7,7 @@ export default function App() {
       <main className='main'>
         <div className='gradient' />
       </main>
-      <div className='layout '>
+      <div className='layout pt-[120px] '>
         <Hero />
         <FormUrl />
       </div>

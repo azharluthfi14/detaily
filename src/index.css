@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
   .layout {
     max-width: 68.75rem;
     width: 90%;
@@ -10,6 +14,15 @@
     margin-right: auto;
     z-index: 10;
     position: relative;
+  }
+
+  .header {
+    translate: 0 -102px;
+  }
+
+  .header-visible {
+    top: 0;
+    translate: 0;
   }
 
   .main {
@@ -67,5 +80,25 @@
     filter: blur(100px) saturate(150%);
     top: 80px;
     opacity: 0.15;
+  }
+
+  .loader {
+    width: 38px;
+    height: 38px;
+    border: 4px solid #9ca3af;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
