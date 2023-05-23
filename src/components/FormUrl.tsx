@@ -45,7 +45,7 @@ export const FormUrl: FC = () => {
                 setArticles({ ...articles, url: event.target.value })
               }
               id='default-search'
-              className='block w-full p-5 pl-10 pr-24 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none bg-gray-50 focus:ring-blue-500 focus:border-blue-500'
+              className='block dark:bg-neutral-800 dark:border-neutral-700 w-full p-5 pl-10 pr-24 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none bg-gray-50 focus:ring-blue-500 focus:border-blue-500'
               placeholder='Paste the article link...'
             />
             <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
@@ -70,7 +70,7 @@ export const FormUrl: FC = () => {
               disabled={isFetching || articles.url.length <= 0}
               className='text-white absolute right-3 bottom-3 disabled:cursor-not-allowed disabled:bg-blue-300 disabled:hover:bg-blue-300 bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-4 py-2  '
             >
-              Search
+              Submit
             </button>
           </div>
         </form>
@@ -81,15 +81,15 @@ export const FormUrl: FC = () => {
 
         <div className='my-10 max-w-full flex justify-center items-center'>
           {isFetching ? (
-            <div className='flex flex-col items-center space-y-5 p-5 bg-white border rounded-md w-full'>
+            <div className='flex flex-col items-center space-y-5 p-5 bg-white dark:bg-neutral-800 dark:border-neutral-700 border rounded-md w-full'>
               <span className='loader' />
-              <span className='animate-pulse text-sm text-gray-500 font-medium'>
+              <span className='animate-pulse text-sm text-gray-500 dark:text-neutral-300 font-medium'>
                 Processing...
               </span>
             </div>
           ) : error ? (
             'status' in error ? (
-              <div className='text-red-500 flex flex-col items-center space-y-5 p-5 bg-white border rounded-md w-full'>
+              <div className='text-red-500 flex flex-col items-center dark:bg-neutral-800 dark:border-neutral-700 p-5 bg-white border rounded-md w-full'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'

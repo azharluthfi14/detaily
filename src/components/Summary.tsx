@@ -13,8 +13,8 @@ export const Summary: FC<SummaryCardProps> = ({ summary }) => {
           Summary
         </span>
       </h2>
-      <div className='p-5 bg-white border rounded-md w-full'>
-        <p className='prose'>{summary}</p>
+      <div className='p-5 bg-white dark:bg-neutral-800 dark:border-neutral-700 border rounded-md w-full'>
+        <p className='prose dark:prose-invert'>{summary}</p>
       </div>
     </div>
   );

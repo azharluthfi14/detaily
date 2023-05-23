@@ -23,10 +23,14 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
+    "@hookform/resolvers": "^3.1.0",
     "@reduxjs/toolkit": "^1.9.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.5"
+    "react-hook-form": "^7.43.9",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.11.0",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
